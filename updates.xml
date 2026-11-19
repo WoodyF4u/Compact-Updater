@@ -2,20 +2,20 @@
 <updates>
     <update>
         <name>Compact Updater</name>
-        <description>Plugin van de uitbreiding "Updates" voor de Websites Monitor: laat de monitor de extensie-updates op deze site ophalen en installeren.</description>
+        <description>Plugin van de uitbreiding "Updates" voor de Websites Monitor: laat de monitor de updates op deze site (extensies en Joomla zelf) ophalen en installeren.</description>
         <element>compactupdater</element>
         <type>plugin</type>
         <folder>system</folder>
         <client>site</client>
-        <version>2.0.1</version>
+        <version>2.1.0</version>
         <infourl title="Compact Updater op GitHub">https://github.com/WoodyF4u/Compact-Updater</infourl>
         <downloads>
-            <downloadurl type="full" format="zip">https://github.com/WoodyF4u/Compact-Updater/releases/download/v2.0.1/plg_system_compactupdater_v2.0.1.zip</downloadurl>
+            <downloadurl type="full" format="zip">https://github.com/WoodyF4u/Compact-Updater/releases/download/v2.1.0/plg_system_compactupdater_v2.1.0.zip</downloadurl>
         </downloads>
         <tags>
             <tag>stable</tag>
         </tags>
-        <sha256>1fb83fe5044d1105abb00bf59edd5d68e9b462c06d2e2a6bf9b27b003609c6ec</sha256>
+        <sha256>13b290f17a5ee16bc16c545e01a2760c13daef425b6ea74d29f3223e84c59fd2</sha256>
         <maintainer>CompactWeb</maintainer>
         <maintainerurl>https://github.com/WoodyF4u/Compact-Updater</maintainerurl>
         <targetplatform name="joomla" version="[456]\.[0-9]+"/>
