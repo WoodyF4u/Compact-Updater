@@ -556,6 +556,21 @@ th {
     <p>Weigert de site de verzoeken van de monitor (de melding noemt dan een HTTP-status als 403), dan houdt meestal een firewall op de
     site of bij de hostingpartij ze tegen. Zet in dat geval het IP-adres van de monitor op de witte lijst (zie ook
     <a href="<?php echo MONITOR_URL; ?>help.php#admin-tools">Akeeba Admin Tools</a>).</p>
+
+    <h3 id="updates-zelf">Deze uitbreiding bijwerken</h3>
+    <p>Rechtsboven op de pagina Updates staat de versie van de uitbreiding. De monitor kijkt hooguit eens per 6 uur of er een
+    nieuwere versie is. Is die er, dan wordt de versie een knop <strong>⬆️ Nieuwe versie … beschikbaar</strong>. Na een klik zie je
+    wat er nieuw is, en na akkoord werkt de monitor de uitbreiding meteen bij:</p>
+    <ul>
+        <li>de nieuwe versie wordt gedownload en gecontroleerd op de controlesom die bij de release hoort;</li>
+        <li>de huidige versie wordt eerst bewaard als <code>uitbreidingen/updates-vorige-versie.zip</code>;</li>
+        <li>daarna worden de nieuwe bestanden over de oude heen gezet. Instellingen, koppelingen en geschiedenis staan in de database
+        en blijven gewoon bestaan.</li>
+    </ul>
+    <p>Gaat er iets mis, dan is er niets veranderd, of zet je de vorige versie terug door
+    <code>updates-vorige-versie.zip</code> uit te pakken in de hoofdmap van de monitor. Mag de monitor op de server zijn eigen
+    bestanden niet wijzigen, dan zegt de melding dat; pak dan de nieuwe <code>uitbreiding-updates.zip</code> zelf uit en upload die
+    via FTP. Dit gaat alleen over de uitbreiding; de plugin op de sites werk je bij op het tabblad <em>Updater-plugins</em>.</p>
     </div>
 </details>
 

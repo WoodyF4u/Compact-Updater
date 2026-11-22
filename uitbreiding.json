@@ -1,0 +1,10 @@
+{
+    "versie": "1.0.0",
+    "datum": "2026-11-22",
+    "download": "https://github.com/WoodyF4u/Compact-Updater/releases/download/uitbreiding-v1.0.0/uitbreiding-updates.zip",
+    "sha256": "eb6cd4d90f68074a2fd21623d38b4171854b3a52b177ed81c863086867e757eb",
+    "wijzigingen": [
+        "Versienummer rechtsboven op de pagina Updates.",
+        "De uitbreiding kan zichzelf bijwerken met de knop rechtsboven, zodra er een nieuwere versie op GitHub staat."
+    ]
+}

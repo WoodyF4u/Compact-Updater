@@ -18,6 +18,8 @@
 //   koppeling_wissen site_id                      - koppeling vergeten (de plugin blijft op de site)
 //   terugzetten      geschiedenis_id              - snapshot van een eerdere update terugzetten
 //   locaties         site_id, modus               - updatesites inschakelen of herbouwen
+//   zelf_controle    opnieuw                      - is er een nieuwere versie van deze uitbreiding?
+//   zelf_bijwerken   -                            - deze uitbreiding bijwerken vanaf GitHub
 
 require_once __DIR__ . '/basis.php';
 require_once MONITOR_MAP . '/sessie_start.php';
@@ -40,6 +42,7 @@ require_once MONITOR_MAP . '/config.php';
 require_once MONITOR_MAP . '/csrf_functies.php';
 require_once MONITOR_MAP . '/instellingen_functies.php';
 require_once __DIR__ . '/updates_functies.php';
+require_once __DIR__ . '/zelf_bijwerken_functies.php';
 
 if (!csrfTokenGeldig()) {
     echo json_encode(['succes' => false, 'foutmelding' => 'Ongeldige aanvraag (CSRF-token verlopen). Ververs de pagina.']);
@@ -175,6 +178,14 @@ try {
             $pdo->prepare("DELETE FROM updates_koppeling WHERE site_id = ?")->execute([$siteId]);
             $pdo->prepare("DELETE FROM updates_beschikbaar WHERE site_id = ?")->execute([$siteId]);
             antwoord(['succes' => true]);
+
+        case 'zelf_controle':
+            $r = updatesZelfControle($pdo, !empty($_POST['opnieuw']));
+            antwoord(['succes' => true] + $r);
+
+        case 'zelf_bijwerken':
+            $r = updatesZelfBijwerken($pdo);
+            antwoord(['succes' => $r['ok'], 'bericht' => $r['bericht'], 'foutmelding' => $r['ok'] ? '' : $r['bericht']]);
 
         default:
             antwoord(['succes' => false, 'foutmelding' => 'Onbekende actie.']);

@@ -14,6 +14,7 @@ require_once MONITOR_MAP . '/versie.php';
 require_once MONITOR_MAP . '/csrf_functies.php';
 require_once MONITOR_MAP . '/instellingen_functies.php';
 require_once __DIR__ . '/updates_functies.php';
+require_once __DIR__ . '/zelf_bijwerken_functies.php';
 require_once MONITOR_MAP . '/versie_vergelijk_functies.php';
 
 // updates.php
@@ -460,6 +461,26 @@ h2 {
 .knop.knop-opvallend:not(:disabled) {
     font-weight: bold;
     box-shadow: 0 0 0 2px var(--thema-kader-bg), 0 0 0 4px #1f6fa8;
+}
+
+/* Rechtsboven: de versie van deze uitbreiding, of een knop als er een
+   nieuwere versie is. */
+.zelf-versie {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 10px;
+    border: 1px solid var(--thema-rand);
+    border-radius: 12px;
+    font-size: 12px;
+    color: var(--thema-uitleg-tekst);
+    white-space: nowrap;
+}
+
+.knop.zelf-nieuw:not(:disabled) {
+    background: #1f6fa8;
+    color: white;
+    font-weight: bold;
+    box-shadow: 0 0 0 2px var(--thema-kader-bg), 0 0 0 4px #f5c518;
 }
 
 /* Een actieknop onder een melding, op een eigen regel. */
@@ -966,7 +987,8 @@ input[type="number"] {
         <h1>🔄 Updates</h1>
         <div class="klein">Updates van extensies en van Joomla zelf op alle sites, zoals Joomla ze op elke site zelf heeft gevonden.<?php echo hulpIcoon('updates', 'Hoe het centraal bijwerken werkt: de plugin op de sites, de instellingen per extensie en per site, snapshots en terugzetten.'); ?></div>
     </div>
-    <div style="display: flex; gap: 8px;">
+    <div style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap; justify-content: flex-end;">
+        <span id="zelf-versie" class="zelf-versie" title="Versie van de uitbreiding Updates">Versie <?php echo h(UPDATES_UITBREIDING_VERSIE); ?></span>
         <button type="button" class="knop" onclick="history.back()" style="padding: 8px 12px;" title="Eén stap terug">←</button>
         <a class="knop" href="<?php echo MONITOR_URL; ?>index.php?categorie=<?php echo urlencode($categorie); ?>">Terug naar monitor</a>
     </div>
@@ -1675,6 +1697,59 @@ async function slaBeleidOp(select) {
         verversDelen(['updates-lijst', 'knop-alles']);
     });
 }
+
+// ------------------------------------------------------------------
+// Deze uitbreiding zelf bijwerken
+// ------------------------------------------------------------------
+// Rechtsboven staat de versie. Is er op GitHub een nieuwere, dan wordt
+// dat een knop; die werkt de uitbreiding meteen bij.
+var ZELF = null;
+
+function zelfControle(opnieuw) {
+    stuur('zelf_controle', { opnieuw: opnieuw ? 1 : 0 }).then(function (r) {
+        var plek = document.getElementById('zelf-versie');
+        if (!plek || !r.succes) {
+            return;
+        }
+        ZELF = r;
+        if (r.nieuwer) {
+            var knop = document.createElement('button');
+            knop.type = 'button';
+            knop.id = 'zelf-versie';
+            knop.className = 'knop zelf-nieuw';
+            knop.title = 'Nu geïnstalleerd: versie ' + r.huidig + '. Klik om bij te werken.';
+            knop.textContent = '⬆️ Nieuwe versie ' + r.nieuwste + ' beschikbaar (nu ' + r.huidig + ')';
+            knop.onclick = function () { zelfBijwerken(knop); };
+            plek.replaceWith(knop);
+        } else {
+            plek.title = 'Versie van de uitbreiding Updates. ' + (r.ok
+                ? 'Dit is de nieuwste versie.'
+                : 'Kon niet nagaan of er een nieuwere versie is: ' + r.fout);
+        }
+    });
+}
+
+async function zelfBijwerken(knop) {
+    var r = ZELF || {};
+    var tekst = 'De uitbreiding Updates bijwerken van versie ' + r.huidig + ' naar ' + r.nieuwste + '?'
+        + (r.wijzigingen && r.wijzigingen.length ? '\n\nWat er nieuw is:\n• ' + r.wijzigingen.join('\n• ') : '')
+        + '\n\nDe huidige versie wordt eerst bewaard als uitbreidingen/updates-vorige-versie.zip. Je instellingen en geschiedenis blijven gewoon bestaan.';
+    if (!await bevestig(tekst, 'Bijwerken naar ' + r.nieuwste)) {
+        return;
+    }
+    knop.disabled = true;
+    knop.textContent = '⏳ Bezig met bijwerken…';
+    var uitkomst = await stuur('zelf_bijwerken', {});
+    if (!uitkomst.succes) {
+        await meld('Bijwerken mislukt: ' + (uitkomst.foutmelding || 'onbekende fout'));
+        knop.disabled = false;
+        knop.textContent = '⬆️ Nieuwe versie ' + r.nieuwste + ' beschikbaar (nu ' + r.huidig + ')';
+        return;
+    }
+    await meld('✅ ' + uitkomst.bericht);
+    verversBovenaan();
+}
+zelfControle(false);
 
 // Een keuze "Volgt …" per site laat zien wát er dan geldt, bijvoorbeeld
 // "Volgt alle sites: Overslaan (niet bijwerken)". Zo zie je meteen dat

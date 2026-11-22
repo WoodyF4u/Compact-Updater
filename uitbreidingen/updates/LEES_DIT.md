@@ -12,6 +12,8 @@ Dit is een **uitbreiding**: hij staat los van de monitor in de map `uitbreidinge
 - `updates_functies.php`: de gedeelde functies, inclusief de eigen databasetabellen (`updates_koppeling`, `updates_beschikbaar`, `updates_beleid`, `updates_geschiedenis`) en instellingen die met `updates_` beginnen
 - `cron_updates.php`: optionele cronjob
 - `help.php`: de uitleg; de vraagtekentjes op de pagina verwijzen hierheen
+- `uitbreiding_versie.php`: het versienummer van de uitbreiding zelf
+- `zelf_bijwerken_functies.php`: de uitbreiding zichzelf laten bijwerken vanaf GitHub (de knop rechtsboven)
 - `updates_plugin/compactupdater/...`: de Joomla-plugin **Compact Updater** (`plg_system_compactupdater`) die de uitbreiding op de sites zet
 
 ## Raakvlakken met de monitor zelf
@@ -25,6 +27,23 @@ Dit is een **uitbreiding**: hij staat los van de monitor in de map `uitbreidinge
   ```
 
 Verder niets: de monitor zelf heeft geen uitzonderingen voor de uitbreiding. De plugin Compact Updater heeft een gewone updatesite (zie hieronder), dus het extensieoverzicht van de monitor toont hem zoals elke andere extensie: up-to-date, of met een nieuwere versie als er op een site nog een oude staat.
+
+## Nieuwe versie van de uitbreiding uitbrengen
+
+De uitbreiding heeft een eigen versienummer (los van de plugin en van de monitor). De pagina Updates kijkt in
+
+```
+https://raw.githubusercontent.com/WoodyF4u/Compact-Updater/main/uitbreiding.json
+```
+
+of er een nieuwere versie is, en kan zich dan met één klik bijwerken. Bij een nieuwe versie:
+
+1. Versie ophogen in `uitbreiding_versie.php`.
+2. Vanuit de hoofdmap van de repository inpakken: `zip -r uitbreiding-updates.zip uitbreidingen` (de zip mag alleen de map `uitbreidingen/updates` bevatten).
+3. Een release `uitbreiding-vX.Y.Z` maken met `uitbreiding-updates.zip` erbij.
+4. In `uitbreiding.json` de versie, de datum, de downloadlink, de `sha256` van de zip en de wijzigingen (een paar korte regels) bijwerken. Pas daarna zien de monitors de nieuwe versie.
+
+Zit er ook een nieuwe versie van de plugin in, breng die dan eerst uit (zie hieronder).
 
 ## Updatesite van de plugin
 
