@@ -43,7 +43,7 @@ Verdere uitleg staat in de uitbreiding zelf: elk vraagtekentje op de pagina verw
 
 ## Bijwerken
 
-- **De uitbreiding:** rechtsboven op de pagina Updates staat de versie. Is er een nieuwere, dan wordt dat een knop **⬆️ Nieuwe versie … beschikbaar**. Na een klik en akkoord werkt de monitor de uitbreiding meteen zelf bij: hij downloadt de nieuwe versie van GitHub, controleert de controlesom, bewaart de huidige versie als `uitbreidingen/updates-vorige-versie.zip` en zet de nieuwe bestanden neer. Instellingen en geschiedenis blijven bewaard.
+- **De uitbreiding:** naast de titel op de pagina Updates staat de versie. Is er een nieuwere, dan wordt dat een knop **⬆️ Nieuwe versie … beschikbaar**. Na een klik en akkoord werkt de monitor de uitbreiding meteen zelf bij: hij downloadt de nieuwe versie van GitHub, controleert de controlesom, bewaart de huidige versie als `uitbreidingen/updates-vorige-versie.zip` en zet de nieuwe bestanden neer. Instellingen en geschiedenis blijven bewaard.
   - Daarvoor moet de monitor zijn eigen bestanden mogen wijzigen en moet PHP de uitbreiding `zip` hebben; meestal is dat zo. Lukt het niet, dan zegt de melding waarom. Download dan `uitbreiding-updates.zip` bij de nieuwste [release](https://github.com/WoodyF4u/Compact-Updater/releases) en pak hem uit in de hoofdmap van de monitor.
   - Bijwerken met de knop kan vanaf versie 1.0.0 van de uitbreiding. Had je een eerdere download (zonder versienummer rechtsboven), werk dan eenmalig bij met de zip.
 - **De plugin op de sites:** gebruik op de pagina Updates, tabblad *Updater-plugins*, de knop **Verouderde plugin(s) bijwerken**.
