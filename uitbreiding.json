@@ -1,13 +1,13 @@
 {
-    "versie": "1.0.3",
+    "versie": "1.0.4",
     "datum": "2026-11-23",
-    "download": "https://github.com/WoodyF4u/Compact-Updater/releases/download/uitbreiding-v1.0.3/uitbreiding-updates.zip",
-    "sha256": "78048e7860eb98d99672e2904bbbf25f5a1a70d3149ba8101613d00671db61b7",
+    "download": "https://github.com/WoodyF4u/Compact-Updater/releases/download/uitbreiding-v1.0.4/uitbreiding-updates.zip",
+    "sha256": "b24d61400dcefb5cc4eea5a26ccb31278104f35b15da81b9ed69df5d0753830b",
     "wijzigingen": [
-        "Voortgangsblok: alle sites staan meteen in de lijst, de pagina schuift mee met wie aan de beurt is, en de kop met de stand blijft in beeld.",
-        "Onderaan in beeld een melding zolang er nog iets buiten beeld gebeurt, en een duidelijke melding als alles klaar is.",
-        "De knop Instellingen staat rechts op dezelfde regel als de andere knoppen.",
-        "De samenvattende e-mail komt standaard alleen nog na de cronjob (bij Instellingen weer aan te zetten voor zelf gestart bijwerken).",
+        "Tabbladen zonder symbooltjes; elk tabblad heeft een vraagteken met uitleg en een link naar de helppagina.",
+        "Nieuwe knop Help rechts naast Instellingen, met de uitgebreide uitleg.",
+        "Voortgangsblok: de pagina schuift mee met wie aan de beurt is, en het is duidelijk zichtbaar wanneer alles klaar is.",
+        "De samenvattende e-mail komt standaard alleen nog na de cronjob.",
         "Updates ophalen en installeren gebeurt nu echt op meerdere sites tegelijk."
     ]
 }
