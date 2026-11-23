@@ -2,12 +2,9 @@
     "versie": "1.0.4",
     "datum": "2026-11-23",
     "download": "https://github.com/WoodyF4u/Compact-Updater/releases/download/uitbreiding-v1.0.4/uitbreiding-updates.zip",
-    "sha256": "b24d61400dcefb5cc4eea5a26ccb31278104f35b15da81b9ed69df5d0753830b",
+    "sha256": "341f4403fbbdbe13d51f08f7e867c3c7265a30536b3bc44a310dae55085adec8",
     "wijzigingen": [
-        "Tabbladen zonder symbooltjes; elk tabblad heeft een vraagteken met uitleg en een link naar de helppagina.",
-        "Nieuwe knop Help rechts naast Instellingen, met de uitgebreide uitleg.",
-        "Voortgangsblok: de pagina schuift mee met wie aan de beurt is, en het is duidelijk zichtbaar wanneer alles klaar is.",
-        "De samenvattende e-mail komt standaard alleen nog na de cronjob.",
-        "Updates ophalen en installeren gebeurt nu echt op meerdere sites tegelijk."
+        "Vraagteken bij elk tabblad, knop Help",
+        "Bijwerken met de knop werkt weer"
     ]
 }
