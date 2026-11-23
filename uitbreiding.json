@@ -1,12 +1,11 @@
 {
-    "versie": "1.0.1",
+    "versie": "1.0.2",
     "datum": "2026-11-23",
-    "download": "https://github.com/WoodyF4u/Compact-Updater/releases/download/uitbreiding-v1.0.1/uitbreiding-updates.zip",
-    "sha256": "4e9082b10b937aa2e023618abcfb4f397e03c14da9402ea7447c09b462cc2c79",
+    "download": "https://github.com/WoodyF4u/Compact-Updater/releases/download/uitbreiding-v1.0.2/uitbreiding-updates.zip",
+    "sha256": "853990cfb04ee957858f3a299ec4c9b20d1fc8bdd3aa764aad3b8ab64e665269",
     "wijzigingen": [
+        "De samenvattende e-mail komt standaard alleen nog na de cronjob; na zelf gestart bijwerken niet meer. Bij Instellingen kun je dat weer aanzetten.",
         "Updates ophalen, installeren en plugins plaatsen gebeurt nu echt op meerdere sites tegelijk, en is daardoor veel sneller.",
-        "Ophalen: zes sites tegelijk in plaats van vier.",
-        "Het versienummer staat nu naast de titel.",
-        "Klik op het versienummer om meteen te kijken of er een nieuwere versie is."
+        "Het versienummer staat naast de titel; klik erop om meteen te kijken of er een nieuwere versie is."
     ]
 }
