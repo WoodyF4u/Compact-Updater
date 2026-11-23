@@ -2,10 +2,11 @@
     "versie": "1.0.1",
     "datum": "2026-11-23",
     "download": "https://github.com/WoodyF4u/Compact-Updater/releases/download/uitbreiding-v1.0.1/uitbreiding-updates.zip",
-    "sha256": "d4b1cbfc490c3e1b8f1229216d55dc822ece4108409ebd1c2a3b2671b1c46bb5",
+    "sha256": "4e9082b10b937aa2e023618abcfb4f397e03c14da9402ea7447c09b462cc2c79",
     "wijzigingen": [
         "Updates ophalen, installeren en plugins plaatsen gebeurt nu echt op meerdere sites tegelijk, en is daardoor veel sneller.",
         "Ophalen: zes sites tegelijk in plaats van vier.",
-        "Het versienummer staat nu naast de titel."
+        "Het versienummer staat nu naast de titel.",
+        "Klik op het versienummer om meteen te kijken of er een nieuwere versie is."
     ]
 }
