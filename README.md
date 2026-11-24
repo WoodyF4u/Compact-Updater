@@ -17,9 +17,10 @@ Met deze uitbreiding zie je in de monitor alle updates van al je Joomla-sites in
 
 - Alle updates van alle sites in één overzicht, zoals Joomla ze op elke site zelf heeft gevonden.
 - Per extensie en per site instellen wat er mag gebeuren: handmatig, automatisch (alleen kleine reparaties, binnen dezelfde hoofdversie, of alles), of overslaan.
-- Joomla zelf bijwerken, binnen de huidige hoofdversie of (als je dat aanzet, alleen met een eigen knop) naar een nieuwe hoofdversie, na Joomla's eigen controle vooraf.
+- Joomla zelf bijwerken, per site of op alle sites in één keer, binnen de huidige hoofdversie of (als je dat aanzet, alleen met een eigen knop) naar een nieuwe hoofdversie, na Joomla's eigen controle vooraf. Per site gaat Joomla altijd vóór de extensies.
+- Gedeelde updates: vindt een site een update niet zelf (bijvoorbeeld omdat de server van de maker vanaf die hosting niet bereikbaar is), terwijl een andere site met dezelfde extensie hem wel vond, dan komt het pakket via die andere site. Gebruik dit alleen als je licentie voor de extensie voor al die sites geldt; het is uit te zetten.
 - Een snapshot vóór elke extensie-update, en terugzetten als het misgaat.
-- Updatesites inschakelen of herbouwen, en een samenvattende e-mail na het bijwerken.
+- Updatesites inschakelen of herbouwen, en een samenvattende e-mail na de cronjob.
 
 ## Wat je nodig hebt
 

@@ -7,15 +7,15 @@
         <type>plugin</type>
         <folder>system</folder>
         <client>site</client>
-        <version>2.1.0</version>
+        <version>2.2.0</version>
         <infourl title="Compact Updater op GitHub">https://github.com/WoodyF4u/Compact-Updater</infourl>
         <downloads>
-            <downloadurl type="full" format="zip">https://github.com/WoodyF4u/Compact-Updater/releases/download/v2.1.0/plg_system_compactupdater_v2.1.0.zip</downloadurl>
+            <downloadurl type="full" format="zip">https://github.com/WoodyF4u/Compact-Updater/releases/download/v2.2.0/plg_system_compactupdater_v2.2.0.zip</downloadurl>
         </downloads>
         <tags>
             <tag>stable</tag>
         </tags>
-        <sha256>13b290f17a5ee16bc16c545e01a2760c13daef425b6ea74d29f3223e84c59fd2</sha256>
+        <sha256>a0e7e5544e7e9906fcf70fa6d0be2e59e19bba9e042ec1737cc0a604b64882c0</sha256>
         <maintainer>CompactWeb</maintainer>
         <maintainerurl>https://github.com/WoodyF4u/Compact-Updater</maintainerurl>
         <targetplatform name="joomla" version="[456]\.[0-9]+"/>
