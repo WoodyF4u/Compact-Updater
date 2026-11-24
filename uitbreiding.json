@@ -2,7 +2,7 @@
     "versie": "1.1.0",
     "datum": "2026-11-24",
     "download": "https://github.com/WoodyF4u/Compact-Updater/releases/download/uitbreiding-v1.1.0/uitbreiding-updates.zip",
-    "sha256": "2a3b83e5455032cb3d0c1d7460738650bb1253f0b072d8ab37c727dcffef2f17",
+    "sha256": "cae586b531cf03155da39a6be472b0ca6ca480dd69be4e51d8e28a23f17773e6",
     "wijzigingen": [
         "Gedeelde updates via een andere site (plugin 2.2.0)",
         "Per site eerst Joomla, vijf sites tegelijk"
