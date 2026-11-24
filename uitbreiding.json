@@ -1,10 +1,9 @@
 {
-    "versie": "1.0.4",
-    "datum": "2026-11-23",
-    "download": "https://github.com/WoodyF4u/Compact-Updater/releases/download/uitbreiding-v1.0.4/uitbreiding-updates.zip",
-    "sha256": "341f4403fbbdbe13d51f08f7e867c3c7265a30536b3bc44a310dae55085adec8",
+    "versie": "1.0.5",
+    "datum": "2026-11-24",
+    "download": "https://github.com/WoodyF4u/Compact-Updater/releases/download/uitbreiding-v1.0.5/uitbreiding-updates.zip",
+    "sha256": "e67cac6db35b6af51f754c14039db0e6cd3a4c335351be9982cdb5baca163721",
     "wijzigingen": [
-        "Vraagteken bij elk tabblad, knop Help",
-        "Bijwerken met de knop werkt weer"
+        "Knop om Joomla op alle sites in één keer bij te werken"
     ]
 }
